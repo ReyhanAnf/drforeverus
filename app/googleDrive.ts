@@ -27,9 +27,7 @@ export const getData = async () => {
     const res = await drive.files.list()
     const files = res.data.files
 
-    // console.log(files)
-
-    return files
+    return files?.toSorted()
   } catch (error: any) {
     console.error("Error fetching files:", error.message)
     return null
